@@ -1,0 +1,21 @@
+[project]
+name = "concept-extractor"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Maxime Blanchard", email = "maxime.blanchard@eona-x.eu" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.162.2",
+    "nltk>=3.10.4",
+    "sentence-transformers>=6.2.0",
+]
+
+[project.scripts]
+concept-extractor = "concept_extractor:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"

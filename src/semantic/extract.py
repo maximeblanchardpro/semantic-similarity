@@ -16,3 +16,12 @@ def score_concepts(document: str, model: SentenceTransformer, concepts: list):
     scores = model.similarity(document_embedding, concepts_embedding)[0]
 
     return scores
+
+def score_similarity(documents: list, corpus: list, model: SentenceTransformer):
+
+    embeddings1 = model.encode([doc["document"] for doc in documents])
+    embeddings2 = model.encode([element["document"] for element in corpus])
+
+    similarities = model.similarity(embeddings1, embeddings2)
+
+    return similarities

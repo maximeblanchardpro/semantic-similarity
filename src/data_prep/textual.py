@@ -11,6 +11,8 @@ def extract_apidae_corpus(path: str) -> list:
         try:
             poi = {
                 "id": poi["id"],
+                "nom": poi["nom"]["libelleFr"],
+                "description": poi["presentation"]["descriptifCourt"]["libelleFr"],
                 "document": poi["nom"]["libelleFr"] + " " + poi["type"] + " " + poi["presentation"]["descriptifCourt"]["libelleFr"]
                 }
 
@@ -22,7 +24,7 @@ def extract_apidae_corpus(path: str) -> list:
     return corpus
 
 def remove_punctuation(document: str):
-    text = document.lower()
+    document = document.lower()
 
     r = re.compile("[-!,;_.(){}]")
     document = r.sub(string=document, repl=" ")

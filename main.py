@@ -1,5 +1,5 @@
 from src.data_prep.textual import extract_apidae_corpus, clean_document
-from src.concept_extractor.extract import init_model, score_concepts
+from src.semantic.extract import init_model, score_concepts
 import json
 
 corpus = extract_apidae_corpus(path="data/pois-uc1.json")
